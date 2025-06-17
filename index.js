@@ -1,3 +1,4 @@
+import express from "express";
 import { Redis } from "ioredis";
 import { Worker } from "bullmq";
 import nodemailer from "nodemailer";
@@ -50,3 +51,9 @@ export const sendEmail = async (data) => {
     console.error("Error sending email:", error);
   }
 };
+
+const app = express();
+
+app.listen(3000, () => {
+  console.log("server is running on 3000");
+});
